@@ -210,8 +210,8 @@ impl<W: WriterBackend> Writer<W> {
     /// Writes a message which implements `MessageWrite`
     #[cfg_attr(std, inline)]
     pub fn write_message<M: MessageWrite>(&mut self, m: &M) -> Result<()> {
-        let len = m.get_size();
-        self.write_varint(len as u64)?;
+        //let len = m.get_size();
+        //self.write_varint(len as u64)?;
         m.write_message(self)
     }
 
